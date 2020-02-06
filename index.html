@@ -4,87 +4,178 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Emerson's Weather Dashboard</title>
+    <title>Day Planner</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../weather api /css/style.css"/>
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-  <div class="container">
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="displayedTime" class="lead"></p>
+    </header>
+    <!--The sections with the times, input sections, and locks-->
+    <!-- TODO: use textarea dumbass -->
 
-    <div class=" col-sm-12">
+    <div class="row nine" value="9">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1 time">9am</div>
+      <!-- <input
+        class="form-control form-control-lg col-sm-6 event9"
+        type="text"
+        placeholder="Tasks This Hour" -->
+      <textarea class="form-control col-sm-6 event9" id="exampleFormControlTextarea1" rows="2"></textarea>
+      <div class="timerContainer col-sm-1">
+
+
+        <button class="lock9"><i class="fas fa-bookmark"></i></button>
+      </div>
+    </div>
+    <hr />
+
+    <div class="row ten" value="10">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">10am</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event10"
+      type="text"
+      placeholder="Tasks This Hour" -->
+      <textarea class="form-control col-sm-6 event10" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+    <div class="timerContainer col-sm-1">
+      <button class="lock10"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row eleven" value="11">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">11am</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event11"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event11" id="exampleFormControlTextarea1" rows="2"></textarea>
+
+    <div class="timerContainer col-sm-1">
+      <button class="lock11"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row twelve" value="12">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">12am</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event12"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event12" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock12"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row thirteen" value="13">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">1pm</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event13"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event13" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock13"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row fourteen" value="14">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">2pm</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event14"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event14" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock14"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row fifteen" value="15">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">3pm</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event15"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event15" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock15"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
+  <div class="row sixteen" value="16">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">4pm</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event16"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event16" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock16"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+  
+
+  <div class="row seventeen" value="17">
+    <div class="col-sm-1"></div>
+    <p class="col-sm-1 time">5pm</p>
+    <!-- <input
+      class="form-control form-control-lg col-sm-6 event17"
+      type="text"
+      placeholder="Tasks This Hour"
+    /> -->
+    <textarea class="form-control col-sm-6 event17" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <div class="timerContainer col-sm-1">
+      <button class="lock17"><i class="fas fa-bookmark"></i></button>
+    </div>
+  </div>
+  <hr/>
+
     
-      <header class="header">
-        <h1>Weather Dashboard</h1>
-        <p>
-          This Weaher Dashboard will give you current day, and future weather in
-          your desired area!
-        </p>
-      </header>
-    </div>
-    <hr>
-    <!-- this is the heading where you get a short description  -->
-
-    <div class="row">
-      <div class="sideBar ">
-        <h6>Search For A City</h6>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control cityName" placeholder="City Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-        </div>
-        <!-- <input
-          class="form-control form-control-sm"
-          type="text"
-          placeholder="Your City Here"/>
-        <button type="button" class="btn btn-secondary">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        <div class="previousResults"></div> -->
-      </div>
-      <!-- side bar that allows you to search for cities  -->
-
-      <div class="jumbotron jumbotron-fluid col-sm-9">
-        <div class="container">
-          <h4 class="display-4">Feburary 06, 2020</h4>
-          <p>
-            Temperature :
-          </p>
-          <p>
-            Humidity : 
-          </p>
-          <p>
-            Wind : 
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- where current day weather is displayed  -->
-
-    <div class="row fiveDayForcast">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">
-      <h4> 5-Day Forecast </h4>
-        <div class="dayOne">
-
-        </div>
 
 
-    </div>
-</div>
 
-    <!-- all js files linked  -->
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-    <script src="../weather api /js/script.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
