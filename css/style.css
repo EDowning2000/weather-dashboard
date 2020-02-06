@@ -1,0 +1,12 @@
+.header{
+  text-align: center;
+  background-color: #6193B9 ;
+  width: 100%;
+}
+.form-control{
+  width: 75%;
+}
+
+  .btn{
+    display: inline;
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Emerson's Weather Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../weather api /css/style.css"/>
+  </head>
+  <body>
+  <div class="container">
+
+    <div class=" col-sm-12">
+    
+      <header class="header">
+        <h1>Weather Dashboard</h1>
+        <p>
+          This Weaher Dashboard will give you current day, and future weather in
+          your desired area!
+        </p>
+      </header>
+    </div>
+    <hr>
+    <!-- this is the heading where you get a short description  -->
+
+    <div class="row">
+      <div class="sideBar ">
+        <h6>Search For A City</h6>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control cityName" placeholder="City Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <!-- <input
+          class="form-control form-control-sm"
+          type="text"
+          placeholder="Your City Here"/>
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        <div class="previousResults"></div> -->
+      </div>
+      <!-- side bar that allows you to search for cities  -->
+
+      <div class="jumbotron jumbotron-fluid col-sm-9">
+        <div class="container">
+          <h4 class="display-4">Feburary 06, 2020</h4>
+          <p>
+            Temperature :
+          </p>
+          <p>
+            Humidity : 
+          </p>
+          <p>
+            Wind : 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- where current day weather is displayed  -->
+
+    <div class="row fiveDayForcast">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+      <h4> 5-Day Forecast </h4>
+        <div class="dayOne">
+
+        </div>
+
+
+    </div>
+</div>
+
+    <!-- all js files linked  -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="../weather api /js/script.js"></script>
+  </body>
+</html>
