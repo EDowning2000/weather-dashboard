@@ -1,4 +1,5 @@
 
+
 $(".searchBtn").click(function(event){
   event.preventDefault();
   $(".city").empty()
@@ -12,6 +13,8 @@ $(".searchBtn").click(function(event){
   fiveDayForecast(city)
   $(".badge").empty()
   $(".dailyForecast").empty()
+$(".display-4").text(moment().format("MMM Do YY"));
+
   
   
   
@@ -91,24 +94,27 @@ $.ajax({
       
       if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
 
-        var realTime = response.list[i].dt
-        date= new Date(realTime *1000 )
+        var realTime = response.list[i].dt;
+        // date= new Date(realTime *1000 )
           var initialDiv = $("<div>")
           var dayDiv = $("<div>")
           var currentDay = $('<h5>')
           var humidityP = $('<p>')
           var tempP =$('<p>')
+          var icon =$("<img>")
                 initialDiv.addClass ("card")
                 dayDiv.addClass("card-body")
                 currentDay.addClass("card-title")
-                currentDay.text (date)
+                currentDay.text (moment(realTime, "X").format("MMM Do YY"))
                 humidityP.text("Humidity :" + response.list[i].main.humidity + " %")
                 tempP.text("Temperature :" + response.list[i].main.temp)
+                icon.attr("src", "http://openweathermap.org/img/wn/" + response.list[i].weather[0].icon +".png")
+
                 
 
-                dayDiv.append(tempP, humidityP)
+                dayDiv.append(currentDay,tempP, humidityP, icon)
                 initialDiv.append(dayDiv)
-                $(".dailyForecast").append(initialDiv)
+                $(".dailyForecast").prepend(initialDiv)
         
       }   
   }
