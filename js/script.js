@@ -31,6 +31,7 @@ function getUVIndex(latitude, longitude){
     console.log(response[0].value)
     var UVIndex =response[0].value
     var UVHTML = $(".uv")
+    UVHTML.removeClass("badge-success badge-warning badge-danger")
 
     $('.uv').text("UV Index : "+ UVIndex)
 
