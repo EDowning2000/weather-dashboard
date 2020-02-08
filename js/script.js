@@ -1,24 +1,30 @@
 
+function saveToStorage(){
+  var city = $(".cityName").val().trim()
+localStorage.setItem("city", city)
+previousCities()
+}
+
+function previousCities(){
+  var searchedCities = localStorage.getItem("city")
+   var htmlSearchedCities = $("<p>").text(searchedCities)
+  $('.sideBar').append(htmlSearchedCities)
+}
 
 $(".searchBtn").click(function(event){
   event.preventDefault();
+  saveToStorage()
   $(".city").empty()
   $('.temp').empty()
   $('.humidity').empty()
   $(".wind").empty()
   $('.uv').empty()
   var city = $(".cityName").val().trim()
-  var previousCities = $(".previousCities")
   getWeather(city)
   fiveDayForecast(city)
   $(".badge").empty()
   $(".dailyForecast").empty()
 $(".display-4").text(moment().format("MMM Do YY"));
-
-  
-  
-  
-
 })
 
 
