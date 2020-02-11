@@ -1,3 +1,6 @@
+/* body{
+  background-color: #242F75;
+} */
 .header{
   text-align: center;
   background-color: #6193B9 ;
@@ -10,6 +13,9 @@
   width: 170px;
   float: right;
 }
+/* .jumbotron{
+  float: right;
+} */
 
 .dailyForecast{
   margin-left: 235px;
@@ -23,6 +29,9 @@ border-radius: 3px;
 .badge-danger{
   border-radius: 3px;
 }
-.jumbotron{
+/* .jumbotron{
   margin-left: 20px;
+} */
+.card{
+  background-color: #6193B9;
 }
