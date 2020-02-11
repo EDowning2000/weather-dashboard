@@ -20,7 +20,7 @@ function previousCities() {
     for (var i = 0; i < searchedCities.length; i++) {
       var htmlSearchedCities = $("<p>").text(searchedCities[i]);
       $(".previousCities").append(htmlSearchedCities);
-      $('.previousCities').addClass()
+      htmlSearchedCities.addClass("usedCities")
     }
     cityHistory = searchedCities;
     console.log(cityHistory);
@@ -28,6 +28,13 @@ function previousCities() {
     cityHistory = [];
   }
 }
+
+$(document).on("click", ".usedCities", function(){
+  var value= $(this).text()
+  console.log(value)
+  getWeather(value)
+  fiveDayForecast(value)
+})
 
 $(".searchBtn").click(function(event) {
   event.preventDefault();
@@ -121,6 +128,7 @@ function fiveDayForecast(city) {
       if (response.list[i].dt_txt.indexOf("15:00:00") !== -1) {
         var realTime = response.list[i].dt;
         // date= new Date(realTime *1000 )
+        var containerCard = $('<div>').addClass('col-2')
         var initialDiv = $("<div>");
         var dayDiv = $("<div>");
         var currentDay = $("<h5>");
@@ -142,7 +150,9 @@ function fiveDayForecast(city) {
 
         dayDiv.append(currentDay, tempP, humidityP, icon);
         initialDiv.append(dayDiv);
-        $(".dailyForecast").prepend(initialDiv);
+        containerCard.append(initialDiv)
+
+        $(".dailyForecast").append(containerCard);
       }
     }
   });
