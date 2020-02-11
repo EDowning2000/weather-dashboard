@@ -18,9 +18,9 @@ function previousCities() {
   if (searchedCities && searchedCities.length > 0) {
     $(".previousCities").empty();
     for (var i = 0; i < searchedCities.length; i++) {
-      var htmlSearchedCities = $("<p>").text(searchedCities[i]);
+      var htmlSearchedCities = $("<button>").text(searchedCities[i]);
       $(".previousCities").append(htmlSearchedCities);
-      htmlSearchedCities.addClass("usedCities")
+      htmlSearchedCities.addClass("usedCities btn btn-secondary btn-lg btn-block")
     }
     cityHistory = searchedCities;
     console.log(cityHistory);
@@ -31,6 +31,7 @@ function previousCities() {
 
 $(document).on("click", ".usedCities", function(){
   var value= $(this).text()
+  $('.dailyForecast').empty()
   console.log(value)
   getWeather(value)
   fiveDayForecast(value)
@@ -77,10 +78,10 @@ function getUVIndex(latitude, longitude) {
     if (UVIndex <= 2) {
       UVHTML.addClass("badge-success");
       $(".uv").append(UVHTML);
-    } else if (UVIndex > 2 && UVIndex <= 7) {
+    } else if(UVIndex > 2 && UVIndex <= 7) {
       UVHTML.addClass("badge-warning");
       $(".uv").append(UVHTML);
-    } else if (UVIndex >= 8) {
+    } else if(UVIndex >= 7) {
       UVHTML.addClass("badge-danger");
       $(".uv").append(UVHTML);
     }
