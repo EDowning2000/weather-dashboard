@@ -114,7 +114,7 @@ function getWeather(city) {
 
 function fiveDayForecast(city) {
   var fiveDayQueryUrl =
-    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
     city +
     "&units=imperial&APPID=f97dc0c76838152ccccbda66f22dabd4";
 
