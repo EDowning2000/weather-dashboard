@@ -1,114 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Emerson's Weather Dashboard</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"/>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="assets/css/style.css"/>
-  </head>
-  <body>
-  <div class="container">
 
-    <div class=" col-sm-12">
-    
-      <header class="header">
-        <h1>Weather Dashboard</h1>
-        <p>
-          This Weaher Dashboard will give you current day, and future weather in
-          your desired area!
-        </p>
-      </header>
-    </div>
-    <hr>
-    <!-- this is the heading where you get a short description  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.3.2/css/weather-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <div class="row rowOne">
-      <div class="sideBar col-3">
-        <div class="row">
-          <div class="col-12">
-        <h6 class="searchForCity">Search For A City</h6>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control cityName" placeholder="City Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary searchBtn" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="previousCities"></div>
-          </div>
-        </div>
-
-          
-
-        </div>
-        <!-- <input
-          class="form-control form-control-sm"
-          type="text"
-          placeholder="Your City Here"/>
-        <button type="button" class="btn btn-secondary">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
-        <div class="previousResults"></div> -->
-      </div>
-      <!-- side bar that allows you to search for cities  -->
-
-      <div class="jumbotron jumbotron-fluid col-sm-9">
+<body>
+    <div class="container-fluid main-container bg-dark">
         <div class="container">
-          <h4 class="display-4"></h4>
-          <h4 class="city"></h4>
-          <p class="temp">
-           
-          </p>
-          <p class="humidity">
-            
-          </p>
-          <p class="wind">
-            
-          </p>
-          <span class="uv">
-
-
-          </span>
+            <nav class="navbar navbar-dark bg-dark">
+                <a href="#" class="navbar-brand">Weather Dashboard</a>
+            </nav>
         </div>
-        
-      </div>
-      <!-- <h4 class ="fiveDayStyle"> 5-Day Forecast </h4>
-      <div class="dailyForecast"> -->
-
-  </div>
     </div>
-    <h4 class =" fiveDayStyle"> 5-Day Forecast </h4>
-      <div class="dailyForecast row">
-    <!-- where current day weather is displayed  -->
 
-    <div class="row fiveDayForcast">
-      <div class="col-sm-0"></div>
-      <div class="col-sm-11 forecastContainer">
-      <!-- <h4 class ="fiveDayStyle"> 5-Day Forecast </h4> -->
-        <!-- <div class="dailyForecast">
+    <div class="container">
 
-        </div> -->
+        <div class="row">
+            <div class="col-md-3">
 
+                <div class="input-group mt-5">
+                    <input type="text" class="form-control input-search" placeholder="Search for a city"
+                        aria-label="City search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="#search-btn"><i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </div>
+
+
+
+                <h4 class="mt-5"><em>Recent Searches</em></h4>
+
+                <ul class="list-group mt-3"></ul>
+
+            </div>
+
+            <div class="col offset-md-1">
+
+                <div class="alert alert-danger mt-5" role="alert">
+                    Nothing was found for that search result.
+                </div>
+
+                <div id="today"></div>
+
+                <div class="row mt-5 forecast-row"></div>
+            </div>
+
+        </div>
 
     </div>
-</div>
 
-    <!-- all js files linked  -->
-    <!-- Load jQuery from CDN -->
-<script src="assets/js/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!-- Load your script this way. -->
-<script src="assets/js/script.js"></script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
 </html>
